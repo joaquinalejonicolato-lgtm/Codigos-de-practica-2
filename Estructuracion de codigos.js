@@ -59,3 +59,79 @@ inicio
         mostrar: "Es positivo"
     fin si
 fin
+// Condicion compuesta
+inicio
+    var integrer numero
+    mostrar: "Ingrese numero"
+    ingresar: numero
+    si numero < 0 entonces
+        numero = numero * (-1)
+    sino si numero > 0 entonces
+        mostrar: "Es cero"
+    sino
+        mostrar: "Es positivo"
+    fin si
+fin
+//Condicion anidada
+programa NumeroPositivo
+inicio
+    var integrer numero
+    mostrar: "Ingrese numero"
+    ingresar: numero
+    si numero < 0 entonces
+        numero = numero * (-1)
+     sino
+        si numero > 0 entonces
+            mostrar: "Es cero"
+         sino
+             mostrar: "Es positivo" 
+            
+        sino
+            mostrar: "No es un dato valido"
+        fin si
+    fin si
+fin
+ 
+//Asignaciones
+programa Asignacion
+inicio
+    var integrer numero
+    numero = 2
+    mostrar : "El Numero es:"
+    mostrar: numero
+fin
+
+//Contadores
+programa Contador 
+inicio
+    var integrer i 
+    var integrer cantidadDeCiclos
+
+    mostrar: "Ingresar cantidad de ciclos"
+    ingresar: cantidadDeCiclos
+    i=0
+    mintras i < cantidadDeCiclos hacer
+        i = i + 1
+    fin mientras
+    mostrar: "El Ciclo se Ejecuto"
+    mostrar: i
+    mostrar: " Veces" 
+fin
+
+//Acumuladores
+programa Acumuladores
+inicio
+    var integrer acumulado 
+    var integrer maximo 
+    var integrer acumuluar
+
+    acumulado = 0
+    maximo = 101
+    acumular = 10
+    mientras acumulado < maximo hacer
+        acumulado = acumulado + acumular
+    fin mientras
+    mostrar: "El acumulado es "
+    mostrar: acumulado
+fin
+
