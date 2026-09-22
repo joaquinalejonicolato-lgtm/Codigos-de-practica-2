@@ -135,3 +135,71 @@ inicio
     mostrar: acumulado
 fin
 
+//Acumular Ej 2
+programa cuentaPropinas
+inicio
+    var integrer propinasAcumuladas
+    var integrer cantidad
+    var integrer propinasAcumuladas
+
+    //Comienzo de Bloque A
+    propinasAcumuladas = 0
+    cantidad = 1
+    propina = 0
+    //fin de bloque A de codigo
+
+    //Comienzo de bloque B del codigo
+    mientras cantidad <= 7 hacer //Cantidad representa la cantidad de dias de la semana.
+        mostrar: "Ingrese propina del dia"
+        ingresar: propina
+        propinasAcumuladas = propinasAcumuladas + propina
+        cantidad = cantidad + 1
+    fin mientras
+    //fin de bloque B del codigo
+fin
+
+// Funcion "Y";"O"
+programa condiciones
+inicio
+    si valor > 22 O < 20 entonces
+         //Entran los valores mayores o iguales a 23 o menores o iguales a 19
+         //Quedan eliminados los valores 20, 21 o 22.
+    fin si
+fin
+
+//Ejemplo 2
+programa condiciones
+inicio
+    si valor < 22 y valor > 20 entonces
+        //entra si el valor es 21 o mas grande o si el valor es 21
+        // o mas chico, o sea, es lo mismo que preguntar "valor = 21"
+    fin si
+fin
+
+//Ejemplo 3 mas complejo
+programa condiciones
+inicio
+    nombre = "cosme"
+    clave = "fulanito" 
+    intentos = 0
+
+    ingresar = nombreDeUsuario
+    ingresar = claveDeUsuario
+    intentos = intentos + 1
+
+    si nombre = nombreDeUsuario Y clave = claveDeUsuario Y intentos < 3 entonces
+        mostrar: "acceso concedido" //se accede solo cumpliendo con las 3 condiciones
+    sino
+        mostrar: "Acceso denegado" 
+    fin si
+fin
+
+//Ejemplo 4 con combinacion de"Y" U "O"
+programa condiciones
+inicio
+    si (nombre != nombreDeUsuario O clave != claveDeUsuario) Y intentos = 4 entonces
+        mostrar: "Clave bloqueada" //entra si no se cumple alguna de las 2 primeras condiciones
+                                   // y si se cumple la tercera ("intentos = 4")
+        //En estos casos es conveniente valerse de paréntesis para dividir correctamente los términos de la condición compuesta. 
+    fin si
+fin
