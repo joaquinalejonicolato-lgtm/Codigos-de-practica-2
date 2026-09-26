@@ -156,3 +156,25 @@ iniciar
     fin si
 fin
 
+
+//Entrega de login
+programa LoginTp
+Inicio
+    nombre = "Joaquin01"
+    clave = "patitas01"
+    intentos = 0
+    
+    ingresar = nombreValido
+    ingresar = claveValida
+    ingresar = intentos + 1
+
+    si clave = claveValida Y nombre = nombreValido Y intentos < 3 entonces
+        mostrar: "los datos que ingreso son correctos, aguarde un momento"
+    sino si clave != claveValida O nombre != nombreValido Y intentos <= 2 entonces
+        mostrar: "Uno de los datos no es correcto, intente nuevamente"
+    sino si clave != claveValida O nombre != nombreValido Y intentos  = 3 entonces
+        mostrar: "Se a quedado sin intentos, intente nuevamente mas tarde"
+    fin si
+fin
+
+    
