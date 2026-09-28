@@ -160,8 +160,9 @@ fin
 //Entrega de login
 programa LoginTp
 Inicio
-    nombre = "Joaquin01"
-    clave = "patitas01"
+
+    const integrer nombre = "Joaquin01"
+    const string clave = "patitas01"
     intentos = 0
     
     ingresar = nombreValido
@@ -177,4 +178,33 @@ Inicio
     fin si
 fin
 
+ejercicio bien aplicado
+programa LoginTp
+Inicio
+    const string NOMBRE_CORRECTO = "Joaquin01" //es necesario declarar estas constantes para entender cual es el nombre y la contraseña
+    const string CLAVE_CORRECTA = "patitas01"
     
+     string nombreValido = "" //en este resipiente se va a colocar el nombre correcto y la contraseña correcta (no se declara como variable)
+     string claveValida = ""
+     int intentos = 0
+     boolean ingresado = falso
+
+    mientras (intentos < 3 Y ingresado = falso) hacer //el mientras es necesario para que se haga un bucle hasta que la condicion no se cumpla
+        mostrar: "Ingrese su usuario:"
+        ingresar: nombreValido
+        
+        mostrar: "Ingrese su clave:"
+        ingresar: claveValida
+        
+        intentos = intentos + 1
+
+        si (nombreValido = NOMBRE_CORRECTO Y claveValida = CLAVE_CORRECTA) entonces 
+            mostrar: "Los datos que ingresó son correctos, aguarde un momento."
+            ingresado = verdadero
+        sino si (intentos < 3) entonces
+            mostrar: "Uno de los datos no es correcto, intente nuevamente."
+        sino
+            mostrar: "Se ha quedado sin intentos, intente nuevamente más tarde."
+        fin si
+    fin mientras
+Fin
