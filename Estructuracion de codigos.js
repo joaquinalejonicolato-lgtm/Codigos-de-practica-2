@@ -13,6 +13,8 @@ inicio
     var float altura = 1.68
     var boolean tieneHijos
     tieneHijos = falso
+    //Existen las constantes que se utilizan para cosas fijas como por ejemplo una contraseña
+    const integrer contrasenia = 46612819
 fin
 
 //Estructuras de Secuencias
@@ -202,4 +204,102 @@ inicio
                                    // y si se cumple la tercera ("intentos = 4")
         //En estos casos es conveniente valerse de paréntesis para dividir correctamente los términos de la condición compuesta. 
     fin si
+fin
+
+//Arreglos y vectores
+programa diasDeLaSemana 
+inicio  
+    var integrer dia
+    var string diasDeLaSemana [7]
+    diasDeLaSemana [1] = "es lunes"
+    diasDeLaSemana [2] = "es martes"
+    diasDeLaSemana [3] = "es miercoles"
+    diasDeLaSemana [4] = "es jueves"
+    diasDeLaSemana [5] = "es viernes"
+    diasDeLaSemana [6] = "es sabado"
+    diasDeLaSemana [7] = "es domingo"
+
+    mostrar: "ingrese dia de la semana"
+    ingresar: dia
+
+    si dia > 0 Y dia < 8 entonces
+        mostrar: diasDeLaSemana [dia] //Lo que se ubica dentro del corchete es el valor del dia ej: dia jueves = [4]
+    si no
+        mostrar: "Dia Incorrecto"
+    fin si
+fin
+ //ejemplo de uso de matriz
+ programa AnalisisFoda
+ inicio
+    var string [2] [2]
+
+    mostrar: "Ingrese Fortalezas"
+    ingresar: matrizFoda [1] [1] //ejemplo de ingreso de datos
+    mostrar: "Ingrese Oportunidades"
+    matrizFoda [1] [2] = "no disponible" //ejemplo de asignacion
+    mostrar: "ingrese debilidades"
+    ingresar: matrizFoda [2] [1]
+    mostrar: "ingrese amenzasas"
+    ingresar: matrizFoda [2] [2]
+
+    mostrar: matrizFoda [1] [1]
+    mostrar: matrizFoda [1] [2]
+    mostrar: matrizFoda [2] [1]
+    mostrar: matrizFoda [2] [2]
+fin
+
+//Funciones y ejecuciones
+programa EjemploDeFuncion
+inicio
+    //Declaracion de Variables
+    funcion principal ()
+        // instruccion de la funcion principal
+        otraFuncion() // Invocacion a funcion
+    fin funcion
+
+    funcion otraFuncion () //encabezado de la funcion principal
+        //instruccion de la otraFuncio 
+    fin instruccion
+fin
+
+//Flujo de ejecucion de la funcion
+programa EjemploParaLecturaDeProgramaConFunciones
+inicio  
+    funcion principal ()
+        var strin seguirONo = "n"
+
+        mostrar: "funcion de 'calculo()'"
+        calculo()
+
+        mostrar: "¿Desea seguir? Ingrese s/n"
+        ingresar: seguirONo
+
+        si seguirONo = "s" entonces 
+            principal()
+        sino
+            mostrar: "Gracias y velva prontos"
+        fin si
+    fin funcion
+fin
+
+//Ejemplo de funcion con parametros
+programa EjemploDeFuncionesConParametros
+inicio  
+    funcion principla()
+        var integrer A
+        var integrer B
+
+        mostrar: "integrar valores:"
+        ingresar: A 
+        ingresar: B
+        suma(A, B)
+        mostrar: "Fin del programa"
+    fin funcion
+
+    funcion suma (integrer primero, integrer segundo)
+        var integrer rdo
+        rdo = primero + segundo
+        mostrar: "El resultado es "
+        mostrar: rdo
+    fin funcion
 fin
