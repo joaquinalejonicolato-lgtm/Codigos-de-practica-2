@@ -1,0 +1,270 @@
+//Creacion de clases y metodos 
+clase Auto
+    //declaracion de atributos
+    color colorDelAuto nuevaInstancia color()
+    Marca marcaDelAuto nuevaInstancia Marca()
+
+    //declaracion de metodos
+    metodo definirColor (Color color)
+        //atributos del metodo
+        // instrucciones de metodo
+    fin metodo
+
+    metodo definirMarca (Marca marca)
+        //declaracion de atributos del metodo
+        // instrucciones del metodo
+    fin metodo
+fin clase
+
+//Codigo completo
+clase Color
+    string color nuevaInstancia String()
+
+    metodo definirColor(String colorNuevo)
+        color = colorNuevo
+    fin metodo
+fin clase
+
+clase Marca
+    String marca nuevaInstancia String()
+
+    metodo definirMarca(String marcaNueva)
+        marca = marcaNueva
+    fin metodo
+
+    metodo String devolverMarca()
+        retornar: marca
+    fin metodo
+fin clase
+
+//"String" es el tipo de dato del atributo. Es la CLASE a partir de la cual se crea el objeto
+//"String()" es el Constructor (ya veremos de qué se trata esto) usado para crear el objeto 
+
+metodo definirMarca(String marcaNueva)
+    marca = marcaNueva
+fin metodo
+
+//Se declara un método llamado "definirMarca" que recibe como parámetro un tipo "String". Dentro del método se asigna el valor del parámetro "marcaNueva" al atributo de clase "marca".
+
+metodo String devolverMarca()
+    retornar: marca
+fin metodo
+
+//En este caso vemos un método llamado "devolverMarca" que no recibe parámetros, pero sí devuelve un valor del tipo String. En este caso, devuelve el valor del atributo "marca". 
+
+//Implementacion de getters y setters
+clase Compania
+    //atributos
+    String nombre nuevaInstancia String()
+    String domicilio nuevaInstancia String()
+
+    //contructorp or default
+    metodo Compania()
+    fin metodo
+
+    //getters
+    // Devuelve Valores del atributo al que corresponde
+    metodo String obtenerDomicilio()
+        retornar: domicilio
+    fin metodo
+    metodo String obtenerNombre()
+        retornar: nombre
+    fin metodo
+
+    //Setters
+    //Recibe un solo parametro para modificar un unico parametro
+    metodo asignarDomicilio(String domicilioNuevo)
+        domicilio = domicilioNuevo
+    fin metodo
+    metodo asignarNombre(String nombreNuevo)
+        nombre = nombreNuevo
+    fin metodo
+fin clase
+
+//Tanto los atributos como los métodos se acceden o invocan a través del operador punto
+Clase Club
+    String nombre nuevaInstancia String()
+
+    metodo Club()
+        nombre = "CARP"
+    fin metodo
+
+    metodo String obtenerNombre
+        retornar: nombre
+    fin metodo
+fin clase
+
+Clase UsaClub 
+    metodo UsaClub()
+        //creo el objeto
+        Club miClub nuevaInstancia Club()
+
+        //Accedo al atributo "nombre" del objeto
+        mostrar: miClub.nombre 
+        //se muestra "CARP"
+
+        //invoco al metodo "obtenerNombre"
+        mostrar: miClub.obtenerNombre()
+        //se muestra "CARP"
+    fin metodo
+fin clase
+//Las expresiones "miClub.nombre" y " miClub.obtenerNombre()" son equivalentes: se ambos se obtiene el valor del atributo "nombre"
+//Vemos que ambos casos se utiliza el operador punto (".") para conectar el objeto ("miClub") con el atributo ("nombre") y el método ("obtenerNombre()") 
+
+clase Auto
+    color colorDelAuto nuevaInstancia Color()
+    Marca marcaDelAuto nuevaInstancia Marca()
+    Float costo nuevaInstancia Float()
+    Float precio nuevaInstancia Float()
+
+    //Constructor
+    metodo Auto()
+        costo = 1000000,00
+    fin metodo
+
+    //metodos de negocio
+    metodo definirMarca (Color color)
+        colorDelAuto = color
+    fin metodo
+    metodo definirMarca (Marca marca)
+        marcaDelAuto = marca
+    fin metodo
+
+    metodo calcularPrecio()
+        precio = costo * 1,5
+    fin metodo
+fin clase
+
+clase EjemploAuto()
+    metodo ejemplo
+     //primer objeto de tipo Auto creado
+     Auto primerAuto nuevaInstancia Auto()
+
+     Color primerAutoColor nuevaInstancia Color()
+     Color auxColor nuevaInstancia Color()
+     Marca primerAutoMarca nuevaInstancia Marca()
+     Marca auxMarca nuevaInstancia Marca()
+
+     primerAutoColor.definirColor("Gris Plata")
+     auxColor = primerAutoColor 
+     primerAutoMarca.definirMarca("VW")
+     auxMarca = primerAutoMarca
+
+     primerAutoColor.definirColor(auxColor)
+     primerAutoMarca.definirMarca(auxMarca)
+
+     //segundo objeto de tipo Auto creado
+     Auto segundoAuto nuevaInstancia Auto()
+     Color segundoAutoColor nuevaInstancia Color()
+     Marca segundoAutoMarca nuevaInstancia Marca()
+
+     segundoAutoColor.definirColor("Scandium")
+     segundoAutoColor.definirColor(segundoAutoColor)
+
+     segundoAutoMarca.definirMarca("Fiat")
+     segundoAutoMarca.definirMarca(segundoAutoMarca)
+    fin metodo
+fin clase
+
+//Validacion de CUIL
+String cuil nuevaInstancia String()
+cuil = "20-46918111-2"
+
+Validador valida nuevaInstancia Validador()
+valida.hacerValidacionDeCUIL(cuil)
+
+//Para esto, vamos a necesitar una clase "Validador" que tenga el método "hacerValidacionDeCUIL". 
+
+//Que el cuil se valide a si mismo 
+clase publica CUIL 
+    String nroCuil nuevaInstancia String()
+
+    metodo publico CUIL()
+    fin metodo
+
+    metodo publico CUIL(String string)
+        nroCuil = nuevoNro
+    fin metodo
+
+    metodo publico Boolean validate()
+        //logica de Validacion
+    fin metodo
+fin clase
+
+CUIL cuil nuevaInstancia CUIL("20-46918111-2")
+si cuil.validate() = verdadero entonces 
+    mostrar: "nro ok"
+sino
+    mostrar: "nro no ok"
+fin si
+
+
+
+
+
+//Ejemplo de modelo para consecionaria
+clase Auto
+    Color color ...
+    Marca marca ...
+    Modelo modelo ...
+    Precio precio ...
+
+
+
+clase Auto  
+    Duenio duenio ...
+    Modelo modelo ...
+    FechaIngreso fecha ...
+    Problemas problemas ...
+
+
+Clase Libro
+    //defino los atributos (todos los atributos son objetos)
+    String nombre nuevaInstancia String()
+    String autor nuevaInstancia String()
+    Integrer anioPublicacion nuevaInstancia Integrer()
+    //El atributo esta compuesto por: "tipo de dato": Integrer, el objeto ("anioPublicacion")
+    //la palabra reservada "nuevaInstancia" y el constructor utilizado ("Integrer()")
+
+    //      Integrer, String, Boolean, Float, Date, ETC los vamos a tomar como clases
+    Integrer anioActual nuevaInstancia Integrer()
+
+    //un metodo que nunca devulve un valor y se llama igual que la clase es un constructor
+    //si no recibe parametros es el "constructor por default"
+
+    metodo Libro() //Constructor
+        autor = "Anonimo"
+        anioPublicacion = -1
+        anioActual = 2026
+        nombre = "Joaco"
+    fin metodo
+
+    //metodo que calcula los años de antiguedad del Libro
+    metodo Integrer calcularAntiguedad()
+        retornar: anioActual - anioPublicacion
+    fin metodo
+
+
+    //metodo setter para asignarle un valor a un atributo
+    //No devulve valores y recibe un parametro
+    //Solo hace una asignacion
+    metodo asignarAutor(String nuevoAutor)
+        autor = nuevoAutor
+    fin metodo
+
+    metodo asignarAnioDePublicacion(Integrer nuevoAnioDePublicacion)
+        anioPublicacion = nuevoAnioDePublicacion
+    fin metodo
+
+    metodo asignarNombre(String nuevoNombre)
+        nombre = nuevoNombre
+    fin metodo
+
+    //metodo getter para devolver valores
+    //Siempre devulve valores y niunca recibe parametros
+    metodo String obtenerAutor()
+        retornar: autor
+    fin  metodo
+fin clase
+        
+
